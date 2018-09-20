@@ -1,0 +1,34 @@
+<!--<h2>{{curso.nombreCurso | uppercase}} Detalles</h2>-->
+<!--<div>-->
+<!--<span>idCurso: </span>-->
+<!--{{curso.idCurso}}-->
+<!--</div>-->
+<!--<div>-->
+<!--<span>nombreCurso: </span>-->
+<!--{{curso.nombreCurso}}-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<label>nombreCurso:-->
+<!--<input [(ngModel)]="curso.nombreCurso" placeholder="nombreCurso">-->
+<!--</label>-->
+<!--</div>-->
+<h2>Mis Cursos</h2>
+<ul class="cursos">
+  <li *ngFor="let curso of cursos"
+      [class.selected]="curso===selectedCurso"
+      (click)="onSelect(curso)">
+    <span class="badge">{{curso.idCurso}}</span>{{curso.nombreCurso}}
+  </li>
+</ul>
+<div *ngIf="selectedCurso">
+  <h2>{{selectedCurso.nombreCurso | uppercase}} Detalles</h2>
+  <div>
+  <span>idCurso: </span>
+  {{selectedCurso.idCurso}}
+  </div>
+  <div>
+  <span>nombreCurso: </span>
+  {{selectedCurso.nombreCurso}}
+  </div>
+</div>
