@@ -6,6 +6,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent implements OnInit {
+  propina: number;
+  cuenta: number;
+  valido: boolean;
+  porcentaje = 10;
 
   constructor() {
   }
@@ -13,4 +17,16 @@ export class CalculadoraComponent implements OnInit {
   ngOnInit() {
   }
 
+  calcular() {
+    this.propina = (this.cuenta * this.porcentaje / 100);
+  }
+
+  validar() {
+    this.valido = true;
+  }
+
+  invalidar() {
+    this.valido = false;
+    this.porcentaje = 10;
+  }
 }
